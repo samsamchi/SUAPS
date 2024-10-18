@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# SUAPS - Sistema Único de Atenção Psicossocial
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Repositório do projeto **SUAPS (Sistema Único de Atenção Psicossocial)**, desenvolvido utilizando  **React** e  **React Native** para oferecer uma interface intuitiva e responsiva que facilita o gerenciamento e o acompanhamento de serviços da área da saúde mental.
 
-## Available Scripts
+## Visão Geral
 
-In the project directory, you can run:
+O **SUAPS** é uma sistema desenvolvido para gerenciar e monitorar os serviços prestados pelos CAPS em Alagoas. Ele oferece funcionalidades para filtrar dados por cidade, tipo de serviço, período e status, além de exibir gráficos e relatórios de desempenho em tempo real.
+
+## Scripts Disponíveis
+
+No diretório do projeto, você pode executar:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Inicia a aplicação em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A página será recarregada automaticamente quando você fizer alterações no código.\
+Você também poderá ver erros de lint no console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia o modo de testes interativos.\
+Consulte a seção sobre [execução de testes](https://facebook.github.io/create-react-app/docs/running-tests) para mais detalhes.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Cria o build da aplicação para produção na pasta `build`.\
+Agrupa corretamente o React no modo de produção e otimiza a construção para o melhor desempenho.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O build é minificado e os arquivos incluem hashes.\
+Sua aplicação está pronta para ser implantada!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Veja a seção sobre [deploy](https://facebook.github.io/create-react-app/docs/deployment) para mais informações.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Nota: Esta é uma operação irreversível. Uma vez que você executar o `eject`, não poderá voltar atrás!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Se você não estiver satisfeito com as configurações de build e as ferramentas de configuração, você pode `eject` a qualquer momento. Este comando removerá a dependência única de build do projeto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Em vez disso, ele copiará todos os arquivos de configuração e as dependências transitivas (webpack, Babel, ESLint, etc.) diretamente no seu projeto para que você tenha controle total sobre eles. Nesse ponto, todos os comandos continuarão funcionando, mas apontarão para os scripts copiados para que você possa ajustá-los.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tecnologias Utilizadas
 
-## Learn More
+- **React Native**: Framework para desenvolvimento de aplicações móveis.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Chart.js e React-Chartjs-2**: Bibliotecas para exibir gráficos de barras que mostram a quantidade de serviços aprovados e apresentados.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Funcionalidades
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Filtro por Cidades**: Exibe opções das cidades de Alagoas.
+- **Filtro por Serviços**: Exibe os serviços prestados.
+- **Filtro por Status e Período**: Filtra os dados com base no status de aprovação e no período selecionado.
+- **Gráficos em Tempo Real**: Exibe gráficos de barras mostrando comparações entre serviços aprovados e apresentados.
+- **Interface Responsiva**: Adaptável para dispositivos móveis usando React Native.
 
-### Code Splitting
+## Configuração e Execução
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/samsamchi/SUAPS.git
