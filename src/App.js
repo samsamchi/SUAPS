@@ -7,7 +7,6 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title } from 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title);
 
 function App() {
-  // Estados para armazenar as seleções
   const [cidade, setCidade] = useState('');
   const [servico, setServico] = useState('');
   const [statusSelecionado, setStatus] = useState(''); 
@@ -15,18 +14,15 @@ function App() {
   const [ano, setAno] = useState('');
   const [numero, setNumero] = useState(null);
 
-  // Contadores para os resultados
   const [qtdAprovados, setQtdAprovados] = useState(0);
   const [qtdApresentados, setQtdApresentados] = useState(0);
 
-  // Listas de opções
   const cidadesAlagoas = ['Maceió', 'Arapiraca', 'Rio Largo', 'Satuba', 'Pilar'];
   const servicos = ['Acolhimento', 'Oficina', 'Intervenção', 'Atividade Educativa', 'Terapia'];
   const statusOptions = ['Aprovados', 'Apresentados']; 
   const periodos = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
   const anos = ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024']; 
 
-  // Função para calcular um número (pode ser qualquer lógica)
   const calcularNumero = () => {
     if (cidade && servico && statusSelecionado && periodo && ano) {
       const resultado = 
@@ -35,42 +31,16 @@ function App() {
         periodos.indexOf(periodo) + 
         statusOptions.indexOf(statusSelecionado) +
         anos.indexOf(ano) + 
-        1; // Adiciona 1 para evitar o resultado ser 0 se nada for selecionado
+        1;
+
       setNumero(resultado);
 
-      // Atualiza as quantidades de Aprovados e Apresentados
       if (statusSelecionado === 'Aprovados') {
         setQtdAprovados(qtdAprovados + 1);
       } else if (statusSelecionado === 'Apresentados') {
         setQtdApresentados(qtdApresentados + 1);
       }
     }
-  };
-
-  // Atualiza a seleção e recalcula o número
-  const handleCidadeChange = (event) => {
-    setCidade(event.target.value);
-    calcularNumero();
-  };
-
-  const handleServicoChange = (event) => {
-    setServico(event.target.value);
-    calcularNumero();
-  };
-
-  const handleStatusChange = (event) => {
-    setStatus(event.target.value);
-    calcularNumero();
-  };
-
-  const handlePeriodoChange = (event) => {
-    setPeriodo(event.target.value);
-    calcularNumero();
-  };
-
-  const handleAnoChange = (event) => {
-    setAno(event.target.value);
-    calcularNumero();
   };
 
   const data = {
@@ -99,7 +69,7 @@ function App() {
         </a>
 
         <div className="filters">
-          <select value={cidade} onChange={handleCidadeChange}>
+          <select value={cidade} onChange={(e) => setCidade(e.target.value)}>
             <option value="">Selecione uma cidade</option>
             {cidadesAlagoas.map((cidade, index) => (
               <option key={index} value={cidade}>
@@ -108,7 +78,7 @@ function App() {
             ))}
           </select>
 
-          <select value={servico} onChange={handleServicoChange}>
+          <select value={servico} onChange={(e) => setServico(e.target.value)}>
             <option value="">Selecione um serviço</option>
             {servicos.map((servico, index) => (
               <option key={index} value={servico}>
@@ -117,7 +87,7 @@ function App() {
             ))}
           </select>
 
-          <select value={statusSelecionado} onChange={handleStatusChange}>
+          <select value={statusSelecionado} onChange={(e) => setStatus(e.target.value)}>
             <option value="">Selecione um status</option>
             {statusOptions.map((status, index) => ( 
               <option key={index} value={status}>
@@ -126,7 +96,7 @@ function App() {
             ))}
           </select>
 
-          <select value={periodo} onChange={handlePeriodoChange}>
+          <select value={periodo} onChange={(e) => setPeriodo(e.target.value)}>
             <option value="">Selecione um período</option>
             {periodos.map((periodo, index) => (
               <option key={index} value={periodo}>
@@ -135,7 +105,7 @@ function App() {
             ))}
           </select>
 
-          <select value={ano} onChange={handleAnoChange}>
+          <select value={ano} onChange={(e) => setAno(e.target.value)}>
             <option value="">Selecione o ano</option>
             {anos.map((ano, index) => (
               <option key={index} value={ano}>
@@ -150,6 +120,10 @@ function App() {
             <h3>Resultado: {numero}</h3>
           </div>
         )}
+
+        <button onClick={calcularNumero} style={{ marginTop: '25px', width: '150px', height: '40px', fontSize: '15px' }}>
+        
+        Atualizar Gráfico</button>
 
         <div style={{ width: '50%', marginTop: '20px' }}>
           <Bar data={data} options={{ responsive: true, plugins: { legend: { position: 'top' }, title: { display: true, text: 'Resultados' } } }} />
