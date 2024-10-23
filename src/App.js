@@ -36,9 +36,9 @@ function App() {
       setNumero(resultado);
 
       if (statusSelecionado === 'Aprovados') {
-        setQtdAprovados(qtdAprovados + 1);
+        setQtdAprovados(qtdAprovados+1);
       } else if (statusSelecionado === 'Apresentados') {
-        setQtdApresentados(qtdApresentados + 1);
+        setQtdApresentados(qtdApresentados+1);
       }
     }
   };
