@@ -1,5 +1,5 @@
 import React, { useState } from 'react';  
-import logo from './logo_nees.png';
+import logo from './logoof.png';
 import './App.css';
 import { Bar } from 'react-chartjs-2'; 
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title } from 'chart.js';
@@ -61,11 +61,9 @@ function App() {
         <p>SUAPS | Sistema Único de Atenção Psicossocial</p>
         <a
           className="App-link"
-          href="https://www.nees.ufal.br/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Sobre o NEES
         </a>
 
         <div className="filters">
@@ -117,11 +115,11 @@ function App() {
 
         {numero !== null && (
           <div className="resultado">
-            <h3>Resultado: {numero}</h3>
+            <h3>Apresentados: {qtdApresentados} |  Aprovados: {qtdAprovados}</h3>
           </div>
         )}
 
-        <button onClick={calcularNumero} style={{ marginTop: '25px', width: '150px', height: '40px', fontSize: '15px' }}>
+        <button onClick={calcularNumero} style={{ marginTop: '25px', marginLeft: '10px', width: '150px', height: '40px', fontSize: '15px' }}>
         
         Atualizar Gráfico</button>
 
